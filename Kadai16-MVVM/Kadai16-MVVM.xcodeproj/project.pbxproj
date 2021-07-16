@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4764C4A026A14F1200C4CC75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C49F26A14F1200C4CC75 /* AppDelegate.swift */; };
+		4764C4A226A14F1200C4CC75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4A126A14F1200C4CC75 /* SceneDelegate.swift */; };
+		4764C4A426A14F1200C4CC75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4A326A14F1200C4CC75 /* ViewController.swift */; };
+		4764C4A726A14F1200C4CC75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4764C4A526A14F1200C4CC75 /* Main.storyboard */; };
+		4764C4A926A14F1300C4CC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4764C4A826A14F1300C4CC75 /* Assets.xcassets */; };
+		4764C4AC26A14F1300C4CC75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4764C4AA26A14F1300C4CC75 /* LaunchScreen.storyboard */; };
+		4764C4B726A14FE200C4CC75 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4B626A14FE200C4CC75 /* InputViewController.swift */; };
+		4764C4B926A1505000C4CC75 /* Input.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4764C4B826A1505000C4CC75 /* Input.storyboard */; };
+		4764C4BC26A150D100C4CC75 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4BA26A150D100C4CC75 /* ItemTableViewCell.swift */; };
+		4764C4BD26A150D100C4CC75 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4764C4BB26A150D100C4CC75 /* ItemTableViewCell.xib */; };
+		4764C4BF26A1525500C4CC75 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4BE26A1525500C4CC75 /* Item.swift */; };
+		4764C4C126A155B700C4CC75 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4C026A155B700C4CC75 /* ItemViewModel.swift */; };
+		4764C4C426A157E800C4CC75 /* ExtensionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4C326A157E800C4CC75 /* ExtensionTableViewCell.swift */; };
+		B0563E075F92BAE013C437FD /* Pods_Kadai16_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462CC804AE8E1E0360B5D6C2 /* Pods_Kadai16_MVVM.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		462CC804AE8E1E0360B5D6C2 /* Pods_Kadai16_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kadai16_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4764C49C26A14F1200C4CC75 /* Kadai16-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kadai16-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4764C49F26A14F1200C4CC75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4764C4A126A14F1200C4CC75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4764C4A326A14F1200C4CC75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4764C4A626A14F1200C4CC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4764C4A826A14F1300C4CC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4764C4AB26A14F1300C4CC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4764C4AD26A14F1300C4CC75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4764C4B626A14FE200C4CC75 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		4764C4B826A1505000C4CC75 /* Input.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Input.storyboard; sourceTree = "<group>"; };
+		4764C4BA26A150D100C4CC75 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		4764C4BB26A150D100C4CC75 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		4764C4BE26A1525500C4CC75 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		4764C4C026A155B700C4CC75 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		4764C4C326A157E800C4CC75 /* ExtensionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTableViewCell.swift; sourceTree = "<group>"; };
+		D50F9911909BDC8BA4EBC136 /* Pods-Kadai16-MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kadai16-MVVM.debug.xcconfig"; path = "Target Support Files/Pods-Kadai16-MVVM/Pods-Kadai16-MVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		E91CC141C2B7C3D1A7C71A26 /* Pods-Kadai16-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kadai16-MVVM.release.xcconfig"; path = "Target Support Files/Pods-Kadai16-MVVM/Pods-Kadai16-MVVM.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4764C49926A14F1200C4CC75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0563E075F92BAE013C437FD /* Pods_Kadai16_MVVM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4764C49326A14F1200C4CC75 = {
+			isa = PBXGroup;
+			children = (
+				4764C49E26A14F1200C4CC75 /* Kadai16-MVVM */,
+				4764C49D26A14F1200C4CC75 /* Products */,
+				63E0C2DBA51DFDA1936EB5E2 /* Pods */,
+				53932B54469CE51CC5AA67BC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4764C49D26A14F1200C4CC75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4764C49C26A14F1200C4CC75 /* Kadai16-MVVM.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4764C49E26A14F1200C4CC75 /* Kadai16-MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				4764C4C226A157B200C4CC75 /* Extension */,
+				4764C4B526A14F3C00C4CC75 /* Model */,
+				4764C4B426A14F2F00C4CC75 /* View */,
+				4764C4B326A14F2400C4CC75 /* ViewModel */,
+				4764C49F26A14F1200C4CC75 /* AppDelegate.swift */,
+				4764C4A126A14F1200C4CC75 /* SceneDelegate.swift */,
+				4764C4A526A14F1200C4CC75 /* Main.storyboard */,
+				4764C4B826A1505000C4CC75 /* Input.storyboard */,
+				4764C4A826A14F1300C4CC75 /* Assets.xcassets */,
+				4764C4AA26A14F1300C4CC75 /* LaunchScreen.storyboard */,
+				4764C4AD26A14F1300C4CC75 /* Info.plist */,
+			);
+			path = "Kadai16-MVVM";
+			sourceTree = "<group>";
+		};
+		4764C4B326A14F2400C4CC75 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4764C4C026A155B700C4CC75 /* ItemViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4764C4B426A14F2F00C4CC75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4764C4A326A14F1200C4CC75 /* ViewController.swift */,
+				4764C4B626A14FE200C4CC75 /* InputViewController.swift */,
+				4764C4BA26A150D100C4CC75 /* ItemTableViewCell.swift */,
+				4764C4BB26A150D100C4CC75 /* ItemTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4764C4B526A14F3C00C4CC75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4764C4BE26A1525500C4CC75 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4764C4C226A157B200C4CC75 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4764C4C326A157E800C4CC75 /* ExtensionTableViewCell.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		53932B54469CE51CC5AA67BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				462CC804AE8E1E0360B5D6C2 /* Pods_Kadai16_MVVM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63E0C2DBA51DFDA1936EB5E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D50F9911909BDC8BA4EBC136 /* Pods-Kadai16-MVVM.debug.xcconfig */,
+				E91CC141C2B7C3D1A7C71A26 /* Pods-Kadai16-MVVM.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4764C49B26A14F1200C4CC75 /* Kadai16-MVVM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4764C4B026A14F1300C4CC75 /* Build configuration list for PBXNativeTarget "Kadai16-MVVM" */;
+			buildPhases = (
+				338EF4FE4808620055ED2E98 /* [CP] Check Pods Manifest.lock */,
+				4764C49826A14F1200C4CC75 /* Sources */,
+				4764C49926A14F1200C4CC75 /* Frameworks */,
+				4764C49A26A14F1200C4CC75 /* Resources */,
+				470E75F526A17EAF00A4C13A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kadai16-MVVM";
+			productName = "Kadai16-MVVM";
+			productReference = 4764C49C26A14F1200C4CC75 /* Kadai16-MVVM.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4764C49426A14F1200C4CC75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					4764C49B26A14F1200C4CC75 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 4764C49726A14F1200C4CC75 /* Build configuration list for PBXProject "Kadai16-MVVM" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4764C49326A14F1200C4CC75;
+			productRefGroup = 4764C49D26A14F1200C4CC75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4764C49B26A14F1200C4CC75 /* Kadai16-MVVM */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4764C49A26A14F1200C4CC75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4764C4AC26A14F1300C4CC75 /* LaunchScreen.storyboard in Resources */,
+				4764C4A926A14F1300C4CC75 /* Assets.xcassets in Resources */,
+				4764C4A726A14F1200C4CC75 /* Main.storyboard in Resources */,
+				4764C4BD26A150D100C4CC75 /* ItemTableViewCell.xib in Resources */,
+				4764C4B926A1505000C4CC75 /* Input.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		338EF4FE4808620055ED2E98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kadai16-MVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		470E75F526A17EAF00A4C13A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4764C49826A14F1200C4CC75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4764C4A426A14F1200C4CC75 /* ViewController.swift in Sources */,
+				4764C4A026A14F1200C4CC75 /* AppDelegate.swift in Sources */,
+				4764C4BC26A150D100C4CC75 /* ItemTableViewCell.swift in Sources */,
+				4764C4C126A155B700C4CC75 /* ItemViewModel.swift in Sources */,
+				4764C4A226A14F1200C4CC75 /* SceneDelegate.swift in Sources */,
+				4764C4BF26A1525500C4CC75 /* Item.swift in Sources */,
+				4764C4B726A14FE200C4CC75 /* InputViewController.swift in Sources */,
+				4764C4C426A157E800C4CC75 /* ExtensionTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4764C4A526A14F1200C4CC75 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4764C4A626A14F1200C4CC75 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4764C4AA26A14F1300C4CC75 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4764C4AB26A14F1300C4CC75 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4764C4AE26A14F1300C4CC75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4764C4AF26A14F1300C4CC75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4764C4B126A14F1300C4CC75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D50F9911909BDC8BA4EBC136 /* Pods-Kadai16-MVVM.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HAMLUR4PQA;
+				INFOPLIST_FILE = "Kadai16-MVVM/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyohei.Kadai16-MVVM";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4764C4B226A14F1300C4CC75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E91CC141C2B7C3D1A7C71A26 /* Pods-Kadai16-MVVM.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HAMLUR4PQA;
+				INFOPLIST_FILE = "Kadai16-MVVM/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyohei.Kadai16-MVVM";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4764C49726A14F1200C4CC75 /* Build configuration list for PBXProject "Kadai16-MVVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4764C4AE26A14F1300C4CC75 /* Debug */,
+				4764C4AF26A14F1300C4CC75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4764C4B026A14F1300C4CC75 /* Build configuration list for PBXNativeTarget "Kadai16-MVVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4764C4B126A14F1300C4CC75 /* Debug */,
+				4764C4B226A14F1300C4CC75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4764C49426A14F1200C4CC75 /* Project object */;
+}
