@@ -12,14 +12,6 @@ final class ItemTableViewCell: UITableViewCell {
     @IBOutlet private weak var checkImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
     func configure(item: Item) {
         checkImageView.image =
             item.isChecked ? UIImage(named: "CheckImage") : nil

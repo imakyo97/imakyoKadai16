@@ -34,6 +34,7 @@ final class InputViewController: UIViewController {
     private let mode: Mode // modeをプロパティで保持
     // tableViewのaccessoryで遷移した場合に選択されたIndex.rowを保持
     private let editingIndex: Int?
+
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,13 +22,14 @@ final class ItemViewModel: NSObject {
         static let pineapple = "パイナップル"
     }
 
-    private(set) var items: [Item] = [
+    private var items: [Item] = [
         Item(isChecked: false, name: ItemName.apple),
         Item(isChecked: true, name: ItemName.orange),
         Item(isChecked: false, name: ItemName.banana),
         Item(isChecked: true, name: ItemName.pineapple)
     ]
 
+    // KVOを使用
     @objc dynamic private(set) lazy var itemData = ItemData(items: items)
 
     // Mode.addの時、Itemを追加するメソッド
