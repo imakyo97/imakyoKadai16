@@ -11,11 +11,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet private weak var itemTableView: UITableView!
     private let itemViewModel = ItemViewModel()
+    private var disposeBag = Set<NSKeyValueObservation>()
+    private var items: [Item] = []
 
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         settingTableView()
+        setupBindings()
     }
 
     private func settingTableView() {
@@ -25,11 +28,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                forCellReuseIdentifier: ItemTableViewCell.identifire)
     }
 
-    // MARK: - ViewWillApper
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        itemTableView.reloadData()
-        print(itemViewModel.items)
+    private func setupBindings() {
+        disposeBag.insert(
+            itemViewModel.observe(\ItemViewModel.itemData,
+                                  options: [.initial, .new],
+                                  changeHandler: { [weak self] _, change in
+                                    self?.items = change.newValue!.items
+                                    self?.itemTableView.reloadData()
+                                  })
+        )
     }
 
     // MARK: - @IBAction
@@ -38,20 +45,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             rootViewController: InputViewController
                 .instantiate(itemViewModel: itemViewModel, mode: .add, editingIndex: nil)
         )
-        inputViewController.modalPresentationStyle =
-            .fullScreen // viewWillAppearを呼び出すためにfullScreenに変更
         present(inputViewController, animated: true, completion: nil)
     }
 
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        itemViewModel.items.count
+        items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableViewCell.identifire)
             as! ItemTableViewCell // swiftlint:disable:this force_cast
-        cell.configure(item: itemViewModel.items[indexPath.row])
+        cell.configure(item: items[indexPath.row])
         return cell
     }
 

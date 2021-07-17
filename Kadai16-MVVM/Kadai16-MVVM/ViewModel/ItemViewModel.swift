@@ -7,7 +7,14 @@
 
 import Foundation
 
-final class ItemViewModel {
+final class ItemData: NSObject {
+    let items: [Item]
+    init(items: [Item]) {
+        self.items = items
+    }
+}
+
+final class ItemViewModel: NSObject {
     enum ItemName {
         static let apple = "りんご"
         static let orange = "みかん"
@@ -22,15 +29,20 @@ final class ItemViewModel {
         Item(isChecked: true, name: ItemName.pineapple)
     ]
 
+    @objc dynamic private(set) lazy var itemData = ItemData(items: items)
+
     func addItem(name: String) {
         items.append(Item(isChecked: false, name: name))
+        itemData = ItemData(items: items)
     }
 
     func toggleIsChecked(at index: Int) {
         items[index].isChecked.toggle()
+        itemData = ItemData(items: items)
     }
 
     func editingName(at index: Int, name: String) {
         items[index].name = name
+        itemData = ItemData(items: items)
     }
 }

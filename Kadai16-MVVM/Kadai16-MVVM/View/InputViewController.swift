@@ -36,7 +36,7 @@ final class InputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let index = editingIndex {
-            nameTextField.text = itemViewModel.items[index].name
+            nameTextField.text = itemViewModel.itemData.items[index].name
         }
     }
 
