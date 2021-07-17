@@ -31,16 +31,19 @@ final class ItemViewModel: NSObject {
 
     @objc dynamic private(set) lazy var itemData = ItemData(items: items)
 
+    // Mode.addの時、Itemを追加するメソッド
     func addItem(name: String) {
         items.append(Item(isChecked: false, name: name))
         itemData = ItemData(items: items)
     }
 
+    // tableViewCellがタップされた時に、index.rowを受け取ってisCheckedを反転させるメソッド
     func toggleIsChecked(at index: Int) {
         items[index].isChecked.toggle()
         itemData = ItemData(items: items)
     }
 
+    // Mode.editの時、items.nameを変更するメソッド
     func editingName(at index: Int, name: String) {
         items[index].name = name
         itemData = ItemData(items: items)
