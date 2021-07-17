@@ -11,7 +11,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet private weak var itemTableView: UITableView!
     private let itemViewModel = ItemViewModel()
-    private var disposeBag = Set<NSKeyValueObservation>()
+    private var disposeBag = Set<NSKeyValueObservation>() // KVO使用
     private var items: [Item] = []
 
     // MARK: - ViewDidLoad
@@ -28,6 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                forCellReuseIdentifier: ItemTableViewCell.identifire)
     }
 
+    // KVOを使用
     private func setupBindings() {
         disposeBag.insert(
             itemViewModel.observe(\ItemViewModel.itemData,
@@ -41,6 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     // MARK: - @IBAction
     @IBAction private func tappedAddBtn(_ sender: Any) {
+        // navigationControllerで遷移
         let inputViewController = UINavigationController(
             rootViewController: InputViewController
                 .instantiate(itemViewModel: itemViewModel, mode: .add, editingIndex: nil)
@@ -67,12 +69,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        // navigationControllerで遷移
         let inputViewController = UINavigationController(
             rootViewController: InputViewController
                 .instantiate(itemViewModel: itemViewModel, mode: .edit, editingIndex: indexPath.row)
         )
-        inputViewController.modalPresentationStyle =
-            .fullScreen // viewWillAppearを呼び出すためにfullScreenに変更
         present(inputViewController, animated: true, completion: nil)
     }
 }

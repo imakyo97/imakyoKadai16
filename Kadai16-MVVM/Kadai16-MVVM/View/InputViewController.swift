@@ -9,11 +9,13 @@ import UIKit
 
 final class InputViewController: UIViewController {
 
+    // モードで追加と編集を分ける
     enum Mode {
         case add
         case edit
     }
 
+    // instantiateInitialViewController(creator:)を使用
     static func instantiate(itemViewModel: ItemViewModel, mode: Mode, editingIndex: Int?)
     -> InputViewController {
         let storyBoard = UIStoryboard(name: "Input", bundle: nil)
@@ -29,12 +31,13 @@ final class InputViewController: UIViewController {
 
     @IBOutlet private weak var nameTextField: UITextField!
     private let itemViewModel: ItemViewModel
-    private let mode: Mode
+    private let mode: Mode // modeをプロパティで保持
+    // tableViewのaccessoryで遷移した場合に選択されたIndex.rowを保持
     private let editingIndex: Int?
-
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        // editingIndexがnilでない場合、itemsのnameをtextField.textに代入
         if let index = editingIndex {
             nameTextField.text = itemViewModel.itemData.items[index].name
         }
