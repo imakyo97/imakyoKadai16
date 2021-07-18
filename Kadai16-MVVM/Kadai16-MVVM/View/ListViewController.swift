@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ListViewController.swift
 //  Kadai16-MVVM
 //
 //  Created by 今村京平 on 2021/07/16.
@@ -7,16 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet private weak var itemTableView: UITableView!
-    private let itemViewModel = ItemViewModel()
+    private let repository = ItemsRepository()
+    private var viewModel: ListViewModel!
     private var disposeBag = Set<NSKeyValueObservation>() // KVO使用
-    private var items: [Item] = []
 
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = ListViewModel(repository: repository)
         settingTableView()
         setupBindings()
     }
@@ -31,10 +32,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // KVOを使用
     private func setupBindings() {
         disposeBag.insert(
-            itemViewModel.observe(\ItemViewModel.itemData,
+            viewModel.observe(\ListViewModel.itemData,
                                   options: [.initial, .new],
-                                  changeHandler: { [weak self] _, change in
-                                    self?.items = change.newValue!.items
+                                  changeHandler: { [weak self] _, _ in
                                     self?.itemTableView.reloadData()
                                   })
         )
@@ -43,37 +43,53 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - @IBAction
     @IBAction private func tappedAddBtn(_ sender: Any) {
         // navigationControllerで遷移
-        let inputViewController = UINavigationController(
-            rootViewController: InputViewController
-                .instantiate(itemViewModel: itemViewModel, mode: .add, editingIndex: nil)
+        let inputViewController = InputViewController
+            .instantiate(viewModel: InputViewModel(repository: repository), mode: .add, editingIndex: nil)
+        inputViewController.delegate = self
+
+        let navigationController = UINavigationController(
+            rootViewController: inputViewController
         )
-        present(inputViewController, animated: true, completion: nil)
+        present(navigationController, animated: true, completion: nil)
     }
 
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
+        viewModel.itemData.items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableViewCell.identifire)
             as! ItemTableViewCell // swiftlint:disable:this force_cast
-        cell.configure(item: items[indexPath.row])
+        cell.configure(item: viewModel.itemData.items[indexPath.row])
         return cell
     }
 
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        itemViewModel.toggleIsChecked(at: indexPath.row)
+        viewModel.toggleIsChecked(at: indexPath.row)
         itemTableView.reloadRows(at: [indexPath], with: .automatic)
     }
 
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         // navigationControllerで遷移
-        let inputViewController = UINavigationController(
-            rootViewController: InputViewController
-                .instantiate(itemViewModel: itemViewModel, mode: .edit, editingIndex: indexPath.row)
+        let inputViewController = InputViewController
+            .instantiate(viewModel: InputViewModel(repository: repository), mode: .edit, editingIndex: indexPath.row)
+        inputViewController.delegate = self
+
+        let navigationController = UINavigationController(
+            rootViewController: inputViewController
         )
-        present(inputViewController, animated: true, completion: nil)
+        present(navigationController, animated: true, completion: nil)
+    }
+}
+
+extension ListViewController: InputViewControllerDelegate {
+    func didSave() {
+        viewModel.reload()
+    }
+
+    func didCancel() {
+        viewModel.reload()
     }
 }

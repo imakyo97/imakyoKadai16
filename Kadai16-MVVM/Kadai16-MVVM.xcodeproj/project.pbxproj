@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4764C4A026A14F1200C4CC75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C49F26A14F1200C4CC75 /* AppDelegate.swift */; };
 		4764C4A226A14F1200C4CC75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4A126A14F1200C4CC75 /* SceneDelegate.swift */; };
-		4764C4A426A14F1200C4CC75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4A326A14F1200C4CC75 /* ViewController.swift */; };
+		4764C4A426A14F1200C4CC75 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4A326A14F1200C4CC75 /* ListViewController.swift */; };
 		4764C4A726A14F1200C4CC75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4764C4A526A14F1200C4CC75 /* Main.storyboard */; };
 		4764C4A926A14F1300C4CC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4764C4A826A14F1300C4CC75 /* Assets.xcassets */; };
 		4764C4AC26A14F1300C4CC75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4764C4AA26A14F1300C4CC75 /* LaunchScreen.storyboard */; };
@@ -18,9 +18,11 @@
 		4764C4BC26A150D100C4CC75 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4BA26A150D100C4CC75 /* ItemTableViewCell.swift */; };
 		4764C4BD26A150D100C4CC75 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4764C4BB26A150D100C4CC75 /* ItemTableViewCell.xib */; };
 		4764C4BF26A1525500C4CC75 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4BE26A1525500C4CC75 /* Item.swift */; };
-		4764C4C126A155B700C4CC75 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4C026A155B700C4CC75 /* ItemViewModel.swift */; };
+		4764C4C126A155B700C4CC75 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4C026A155B700C4CC75 /* ListViewModel.swift */; };
 		4764C4C426A157E800C4CC75 /* ExtensionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764C4C326A157E800C4CC75 /* ExtensionTableViewCell.swift */; };
 		B0563E075F92BAE013C437FD /* Pods_Kadai16_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462CC804AE8E1E0360B5D6C2 /* Pods_Kadai16_MVVM.framework */; };
+		E583F32826A4D00F00B1BC64 /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E583F32726A4D00F00B1BC64 /* InputViewModel.swift */; };
+		E583F32A26A4D0F700B1BC64 /* ItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E583F32926A4D0F700B1BC64 /* ItemsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +30,7 @@
 		4764C49C26A14F1200C4CC75 /* Kadai16-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kadai16-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4764C49F26A14F1200C4CC75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4764C4A126A14F1200C4CC75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4764C4A326A14F1200C4CC75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4764C4A326A14F1200C4CC75 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		4764C4A626A14F1200C4CC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4764C4A826A14F1300C4CC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4764C4AB26A14F1300C4CC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,9 +40,11 @@
 		4764C4BA26A150D100C4CC75 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		4764C4BB26A150D100C4CC75 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		4764C4BE26A1525500C4CC75 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		4764C4C026A155B700C4CC75 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		4764C4C026A155B700C4CC75 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		4764C4C326A157E800C4CC75 /* ExtensionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTableViewCell.swift; sourceTree = "<group>"; };
 		D50F9911909BDC8BA4EBC136 /* Pods-Kadai16-MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kadai16-MVVM.debug.xcconfig"; path = "Target Support Files/Pods-Kadai16-MVVM/Pods-Kadai16-MVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		E583F32726A4D00F00B1BC64 /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
+		E583F32926A4D0F700B1BC64 /* ItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRepository.swift; sourceTree = "<group>"; };
 		E91CC141C2B7C3D1A7C71A26 /* Pods-Kadai16-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kadai16-MVVM.release.xcconfig"; path = "Target Support Files/Pods-Kadai16-MVVM/Pods-Kadai16-MVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +99,8 @@
 		4764C4B326A14F2400C4CC75 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4764C4C026A155B700C4CC75 /* ItemViewModel.swift */,
+				4764C4C026A155B700C4CC75 /* ListViewModel.swift */,
+				E583F32726A4D00F00B1BC64 /* InputViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -103,7 +108,7 @@
 		4764C4B426A14F2F00C4CC75 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4764C4A326A14F1200C4CC75 /* ViewController.swift */,
+				4764C4A326A14F1200C4CC75 /* ListViewController.swift */,
 				4764C4B626A14FE200C4CC75 /* InputViewController.swift */,
 				4764C4BA26A150D100C4CC75 /* ItemTableViewCell.swift */,
 				4764C4BB26A150D100C4CC75 /* ItemTableViewCell.xib */,
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				4764C4BE26A1525500C4CC75 /* Item.swift */,
+				E583F32926A4D0F700B1BC64 /* ItemsRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,12 +266,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4764C4A426A14F1200C4CC75 /* ViewController.swift in Sources */,
+				4764C4A426A14F1200C4CC75 /* ListViewController.swift in Sources */,
 				4764C4A026A14F1200C4CC75 /* AppDelegate.swift in Sources */,
 				4764C4BC26A150D100C4CC75 /* ItemTableViewCell.swift in Sources */,
-				4764C4C126A155B700C4CC75 /* ItemViewModel.swift in Sources */,
+				4764C4C126A155B700C4CC75 /* ListViewModel.swift in Sources */,
 				4764C4A226A14F1200C4CC75 /* SceneDelegate.swift in Sources */,
 				4764C4BF26A1525500C4CC75 /* Item.swift in Sources */,
+				E583F32A26A4D0F700B1BC64 /* ItemsRepository.swift in Sources */,
+				E583F32826A4D00F00B1BC64 /* InputViewModel.swift in Sources */,
 				4764C4B726A14FE200C4CC75 /* InputViewController.swift in Sources */,
 				4764C4C426A157E800C4CC75 /* ExtensionTableViewCell.swift in Sources */,
 			);

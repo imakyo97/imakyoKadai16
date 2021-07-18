@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol InputViewControllerDelegate: AnyObject {
+    func didSave()
+    func didCancel()
+}
+
 final class InputViewController: UIViewController {
 
     // モードで追加と編集を分ける
@@ -15,14 +20,16 @@ final class InputViewController: UIViewController {
         case edit
     }
 
+    weak var delegate: InputViewControllerDelegate?
+
     // instantiateInitialViewController(creator:)を使用
-    static func instantiate(itemViewModel: ItemViewModel, mode: Mode, editingIndex: Int?)
+    static func instantiate(viewModel: InputViewModel, mode: Mode, editingIndex: Int?)
     -> InputViewController {
         let storyBoard = UIStoryboard(name: "Input", bundle: nil)
         let inputViewController =
             storyBoard.instantiateInitialViewController(creator: { coder in
                 InputViewController(coder: coder,
-                                    itemViewModel: itemViewModel,
+                                    viewModel: viewModel,
                                     mode: mode,
                                     editingIndex: editingIndex)
             })!
@@ -30,7 +37,7 @@ final class InputViewController: UIViewController {
     }
 
     @IBOutlet private weak var nameTextField: UITextField!
-    private let itemViewModel: ItemViewModel
+    private let viewModel: InputViewModel
     private let mode: Mode // modeをプロパティで保持
     // tableViewのaccessoryで遷移した場合に選択されたIndex.rowを保持
     private let editingIndex: Int?
@@ -40,12 +47,12 @@ final class InputViewController: UIViewController {
         super.viewDidLoad()
         // editingIndexがnilでない場合、itemsのnameをtextField.textに代入
         if let index = editingIndex {
-            nameTextField.text = itemViewModel.itemData.items[index].name
+            nameTextField.text = viewModel.itemData.items[index].name
         }
     }
 
-    init?(coder: NSCoder, itemViewModel: ItemViewModel, mode: Mode, editingIndex: Int?) {
-        self.itemViewModel = itemViewModel
+    init?(coder: NSCoder, viewModel: InputViewModel, mode: Mode, editingIndex: Int?) {
+        self.viewModel = viewModel
         self.mode = mode
         self.editingIndex = editingIndex
         super.init(coder: coder)
@@ -63,15 +70,17 @@ final class InputViewController: UIViewController {
         }
         switch mode {
         case .add:
-            itemViewModel.addItem(name: nameTextField.text!)
+            viewModel.addItem(name: nameTextField.text!)
         case .edit:
-            itemViewModel.editingName(at: editingIndex!, name: nameTextField.text!)
+            viewModel.editingName(at: editingIndex!, name: nameTextField.text!)
         }
         dismiss(animated: true, completion: nil)
+        delegate?.didSave()
     }
 
     @IBAction private func tappedCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        delegate?.didCancel()
     }
 
     private func presentNotInputAlert() {
